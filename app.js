@@ -47,7 +47,9 @@ app.use(function (req, res, next) {
 
 //console.log()
 //app.use("/test", express.static(__dirname + '/'));
-    
+
+
+
 
 // error handlers
 
