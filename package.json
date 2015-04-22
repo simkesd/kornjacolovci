@@ -13,7 +13,9 @@
     "jade": "*",
     "morgan": "~1.0.0",
     "mysql": "git://github.com/felixge/node-mysql",
-    "serve-favicon": "*",
-    "nodemon": "1.3.7"
+    "nodemon": "1.3.7",
+    "sequelize": "^2.0.6",
+    "sequelize-cli": "^1.7.0",
+    "serve-favicon": "*"
   }
 }
