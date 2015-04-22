@@ -1,0 +1,19 @@
+{
+  "name": "dutch-full",
+  "version": "0.0.0",
+  "authors": [
+    "Milos Simic <simkesd@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "directory": "public/bower_components",
+  "dependencies": {
+    "angular": "~1.3.15"
+  }
+}
