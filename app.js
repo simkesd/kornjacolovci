@@ -45,6 +45,10 @@ app.use(function (req, res, next) {
     next(err);
 });
 
+//console.log()
+//app.use("/test", express.static(__dirname + '/'));
+    
+
 // error handlers
 
 // development error handler
