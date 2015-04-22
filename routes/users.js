@@ -5,16 +5,16 @@ var router = express.Router();
 router.get('/userlist', function(req, res, next) {
     var result;
     var db = req.db;
-    db.connect(function(err){
-        if(!err) {
-            console.log("Database is connected ... \n\n");
-        } else {
-            console.log("Error connecting database ... \n\n");
-        }
-    });
+    //db.connect(function(err){
+    //    if(!err) {
+    //        console.log("Database is connected ... \n\n");
+    //    } else {
+    //        console.log("Error connecting database ... \n\n");
+    //    }
+    //});
 
     db.query('SELECT * from users', function(err, rows, fields) {
-        db.end();
+        //db.end();
         if (!err) {
             //console.log('The solution is: ', rows.toArray());
             res.json(rows);
