@@ -1,3 +1,3 @@
-/**
- * Created by aleksandar.maric on 23.4.2015..
- */
+kornjacolovciApp.controller('maricController', function($scope) {
+    $scope.person = 'Maric';
+});

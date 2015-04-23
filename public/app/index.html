@@ -41,7 +41,8 @@
 </head>
 
 <body>
-<div ng-app="kornjacolovciApp">
+
+<div ng-app="kornjacolovciApp" ng-controller="baseController">
 
     <div id="wrapper">
 
@@ -309,6 +310,7 @@
 
         <div id="page-wrapper">
             <br/>
+            <input type="button" ng-click="sayHello()" value="hello"/>
             <div id="content" ng-view>
             </div>
         </div>
@@ -317,12 +319,6 @@
     </div>
     <!-- /#wrapper -->
 </div>
-<!-- Angular-->
-<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
-
-<!-- index controller -->
-<script type="text/javascript" src="js/controllers/indexControler.js"></script>
 
 <!-- jQuery -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -336,6 +332,19 @@
 <!-- Morris Charts JavaScript -->
 <script src="../bower_components/raphael/raphael-min.js"></script>
 <script src="../bower_components/morrisjs/morris.min.js"></script>
+
+<!-- Angular-->
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+
+<!-- app definition and base controller -->
+<script type="text/javascript" src="js/controllers/app.js"></script>
+
+<!-- simi controller -->
+<script type="text/javascript" src="js/controllers/simiController.js"></script>
+
+<!-- maric controller -->
+<script type="text/javascript" src="js/controllers/maricController.js"></script>
 
 
 <!-- Custom Theme JavaScript -->
