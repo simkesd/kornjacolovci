@@ -1,3 +1,3 @@
 kornjacolovciApp.controller('maricController', function($scope) {
-    $scope.person = 'Maric';
+    $scope.person = 'Maric legenda';
 });
