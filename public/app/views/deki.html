@@ -1,0 +1,12 @@
+<div class="row" ng-controller="dekiController">
+   
+    
+    <table class="table table-striped">
+	<tr ng-repeat = "user in result">
+		<td>{{user.id}}</td>
+		<td>{{user.username}}</td>
+	</tr>
+    </table>
+	
+    <button ng-click="addUser()">Add user</button>
+</div>
