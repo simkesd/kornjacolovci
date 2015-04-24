@@ -1,6 +1,10 @@
 <div class="row" ng-controller="dekiController">
    
     
+    username: <input ng-model = "username" type="text">
+    <button ng-click="addUser()">Add user</button>
+    <br><br>
+ 
     <table class="table table-striped">
 	<tr ng-repeat = "user in result">
 		<td>{{user.id}}</td>
@@ -8,5 +12,4 @@
 	</tr>
     </table>
 	
-    <button ng-click="addUser()">Add user</button>
 </div>
