@@ -1,17 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
+//var APIService = require('/./lib/APIService');
+var APIService    = require(__dirname + '/../lib/APIService');
+
+api = new APIService();
+
+router.get('/:id?', api.users);
+router.post('/', api.usersAdd);
+router.put('/:id', api.usersEdit);
+router.delete('/:id', api.usersDelete);
+
 /* GET userlist. */
 router.get('/userlist', function(req, res, next) {
     var result;
     var db = req.db;
-    //db.connect(function(err){
-    //    if(!err) {
-    //        console.log("Database is connected ... \n\n");
-    //    } else {
-    //        console.log("Error connecting database ... \n\n");
-    //    }
-    //});
 
     db.query('SELECT * from users', function(err, rows, fields) {
         //db.end();
@@ -30,7 +33,7 @@ router.get('/userlist', function(req, res, next) {
  */
 router.post('/adduser', function(req, res) {
     var db = req.db;
-    db.query('INSERT INTO users SET ?', {username: req.body.username}, function(err, result) {
+    db.query('INSERT INTO users SET ?', {username: 'new' + Math.random()}, function(err, result) {
         if (err) { throw err; }
         console.log(result.insertId);
         res.json(result.insertId);
