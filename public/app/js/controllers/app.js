@@ -13,7 +13,9 @@ kornjacolovciApp.config(function($routeProvider){
 });
 
 kornjacolovciApp.controller('baseController', function($scope) {
-    $scope.sayHello = function() {
-        alert("Hello!");
+
+    $scope.indexInit = function() {
+        console.log("Kornjacolovci rulz! :)");
     }
+
 });

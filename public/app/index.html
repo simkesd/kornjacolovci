@@ -42,7 +42,7 @@
 
 <body>
 
-<div ng-app="kornjacolovciApp" ng-controller="baseController">
+<div ng-app="kornjacolovciApp" ng-controller="baseController" data-ng-init="indexInit()">
 
     <div id="wrapper">
 
@@ -310,7 +310,6 @@
 
         <div id="page-wrapper">
             <br/>
-            <input type="button" ng-click="sayHello()" value="hello"/>
             <div id="content" ng-view>
             </div>
         </div>

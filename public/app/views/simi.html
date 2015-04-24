@@ -1,4 +1,9 @@
-<div class="row" ng-controller="simiController">
+<div class="row" ng-controller="simiController" data-ng-init="simiInit()">
     <h1>{{person}}</h1>
-    <input type="button" ng-click="testf()" value="fja"/>
+    <input type="button" ng-click="clearUserList()" value="clear"/>
+    <input type="text" name="username" placeholder="enter username" ng-model="newUsername"/>
+    <input type="button" ng-click="addNewUser()" value="add new"/>
+    <ul>
+        <li ng-repeat="user in users">id: {{user.id}} - username: {{user.username}}</li>
+    </ul>
 </div>

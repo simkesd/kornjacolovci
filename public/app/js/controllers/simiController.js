@@ -1,18 +1,40 @@
 kornjacolovciApp.controller('simiController', ['$scope', '$http', function($scope, $http) {
     $scope.person = 'Milos kraljina';
+    $scope.users = [];
+    $scope.newUsername = "";
 
-    $scope.testf = function() {
+    $scope.simiInit = function (){
+        $scope.getUserList();
+    }
+
+    $scope.getUserList = function() {
         $http({method: 'GET', url : '/users/userlist'}).
             success(function(data, status) {
-                $scope.status = status;
-                $scope.data = data;
-
-                alert(JSON.stringify(data));
+                $scope.users = data;
             }).
-            error(function(data, status) {
-                $scope.data = data || "Request failed";
-                $scope.status = status;
-                alert("ne da radi");
+            error(function() {
+                return -1;
             });
+    }
+
+    $scope.addNewUser = function() {
+        var req = {
+            method: 'POST',
+            url : '/users/adduser',
+            data : {
+                username : $scope.newUsername
+            }
+        }
+        $http(req).
+            success(function(data, status) {
+                $scope.getUserList();
+            }).
+            error(function() {
+                return -1;
+            });
+    }
+
+    $scope.clearUserList = function () {
+        $scope.users = [];
     }
 }]);

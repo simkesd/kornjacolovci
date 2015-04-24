@@ -30,7 +30,7 @@ router.get('/userlist', function(req, res, next) {
  */
 router.post('/adduser', function(req, res) {
     var db = req.db;
-    db.query('INSERT INTO users SET ?', {username: 'new' + Math.random()}, function(err, result) {
+    db.query('INSERT INTO users SET ?', {username: req.body.username}, function(err, result) {
         if (err) { throw err; }
         console.log(result.insertId);
         res.json(result.insertId);
