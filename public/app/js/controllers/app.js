@@ -44,7 +44,7 @@ kornjacolovciApp.config(function($routeProvider){
 kornjacolovciApp.controller('baseController', ['$scope', '$cookieStore', '$routeParams', 'FactoryTest', function ($scope,$cookieStore, $routeParams, FactoryTest) {
 
     $scope.checkUser = function() {
-        //$scope.loggedUser =  $cookieStore.get('loggedUser');
+        return $scope.loggedUser =  $cookieStore.get('loggedUser');
     }
 
     $scope.doLoginF = function() {
