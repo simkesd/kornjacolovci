@@ -34,10 +34,21 @@ app.post('/api/photo',function(req,res){
     }
 });
 
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+var http = require('http');
+var express = require('express'),
+    app = module.exports.app = express();
+//
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);  //pass a http.Server instance
+server.listen(8080);  //listen on port 80
+io.on('connection', function(socket){
+    console.log('a user connected');
+});
+//
+//
+//// view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
