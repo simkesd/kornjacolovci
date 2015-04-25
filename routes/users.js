@@ -7,6 +7,7 @@ var APIService    = require(__dirname + '/../lib/APIService');
 api = new APIService();
 
 
+router.post('/login', api.userLogin);
 router.get('/:id/offers', api.userOffers);
 router.get('/:id/requests', api.userRequests);
 router.get('/:id?', api.users);
