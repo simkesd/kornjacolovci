@@ -5,14 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Database
-var mysql      = require('mysql');
-var db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'kornjacolovci'
-});
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -30,13 +22,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function(req,res,next){
-    req.db = db;
-    next();
-});
+
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/requests', );
+app.use('/offers', );
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -45,13 +36,8 @@ app.use(function (req, res, next) {
     next(err);
 });
 
-//console.log()
-//app.use("/test", express.static(__dirname + '/'));
 
-
-
-
-// error handlers
+//error handlers
 
 // development error handler
 // will print stacktrace
