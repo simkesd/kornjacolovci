@@ -7,12 +7,12 @@
         <option>krava</option>
         <option>pataka</option>
     </select>
-	<input class="form-control" placeholder="Unesite broj grla">
-    <input class="form-control" placeholder="Unesite prosecnu masu grla">
-	<input class="form-control" placeholder="Unesite datum">
+	<input class="form-control" placeholder="Unesite broj grla" ng-model="quantity">
+    <input class="form-control" placeholder="Unesite prosecnu masu grla" ng-model="weight">
+	<input class="form-control" placeholder="Unesite datum" ng-model="deliveryDate">
 	<br>
 
-	<button type="button" class="btn btn-primary">Predstavi zahtev</button>
+	<button type="button" class="btn btn-primary" ng-click="addMyRequest()">Predstavi zahtev</button>
 	<button type="button" class="btn btn-primary" ng-click="goToMyRequests()">Pogledaj sve svoje zahteve</button>
 </p>
 <hr>
