@@ -1,14 +1,16 @@
 <div class="row" ng-controller="requestsController" data-ng-init="requestInit()">
     <div class="panel panel-info" ng-repeat="request in requests">
         <div class="panel-heading">
-            <a href="" class="pull-right btn btn-primary btn-xs">Napravi ponudu</a>
-            {{request}}
+            <a href="/app/#/request/{{request.ID}}/newoffer" class="pull-right btn btn-primary btn-xs">Napravi ponudu</a>
+            <strong>Zivotinja:</strong> <span ng-bind="request.animal_name"></span> - <strong>Kolicina:</strong> <span ng-bind="request.quantity"></span>
         </div>
         <div class="panel-body">
-            text
+            <strong>Datum isporuke: </strong> <span ng-bind="request.delivery_date | date:'dd.MM.yyyy.'"></span><br/>
+            <strong>Tezina: </strong> <span ng-bind="request.weight"></span><br/>
+
         </div>
         <div class="panel-footer">
-            sss
+            <strong>Vreme postavljanja potraznje: </strong> <span ng-bind="request.creation_time | date:'dd.MM.yyyy.'"></span>
         </div>
     </div>
 </div>

@@ -26,6 +26,10 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/requests.html',
             controller: 'requestsController'
         })
+        .when('/request/:requestId/newoffer', {
+            templateUrl: 'views/newOffer.html',
+            controller: 'offerController'
+        })
 	.otherwise('/');
 });
 
