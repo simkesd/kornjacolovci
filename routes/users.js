@@ -8,7 +8,7 @@ api = new APIService();
 
 
 router.get('/:id/offers', api.userOffers);
-router.get('/:id/offers', api.userRequests);
+router.get('/:id/requests', api.userRequests);
 router.get('/:id?', api.users);
 router.post('/', api.usersAdd);
 router.put('/:id', api.usersEdit);
