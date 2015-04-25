@@ -1,19 +1,19 @@
 <h1>Moji zahtevi</h1>
 
 <table class="table table-striped">
-<tr>
-	<td>ID</td>
-	<td>Broj</td>
-	<td>Prosecna tezina</td>
-	<td>Tip zivotinje</td>
-	<td></td>
-</tr>
-<tr ng-repeat ="r in requests">
-	<td>{{r.ID}}</td>	
+
+<!--<tr ng-repeat ="r in requests">	
 	<td>{{r.quantity}}</td>
 	<td>{{r.weight}}</td>
-	<td>{{r.animal_name}}</td>
+	<td><img ng-src="images/{{r.animal_name}}.png" width="128" height="128"></td>
 	<td><a href="/app/#/request/{{r.ID}}">pogledaj ponude</a></td>
+</tr>-->
+
+<tr ng-repeat ="r in requests">	
+	<td><h2>
+	<a href="/app/#/request/{{r.ID}}">pogledaj ponude</a> za  
+	{{r.quantity}} x <img ng-src="images/{{r.animal_name}}.png" width="128" height="128"> po {{r.weight}}
+	</h2></td>
 </tr>
 
 
