@@ -3,9 +3,9 @@
 <p>
 	<h2>Sta ti treba, matori?</h2>
 	<select class="form-control">
-        <option>svinja</option>
-        <option>krava</option>
-        <option>pataka</option>
+        <option ng-repeat="a in animals" value="{{a.ID}}">
+        	{{a.name}}
+        </option>
     </select>
 	<input class="form-control" placeholder="Unesite broj grla" ng-model="quantity">
     <input class="form-control" placeholder="Unesite prosecnu masu grla" ng-model="weight">
