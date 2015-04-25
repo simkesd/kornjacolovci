@@ -1,9 +1,19 @@
-<h1>hh {{id}}</h1>
+<h1>Moji zahtevi</h1>
 
-<table border="1" cellspacing="10">
+<table class="table table-striped">
 <tr>
-	<td>{{requests.ID}}</td>
-	<td>{{requests.quantity}}</td>
-	<td>{{requests.weight}}</td>
+	<td>ID</td>
+	<td>Broj</td>
+	<td>Prosecna tezina</td>
+	<td></td>
 </tr>
+<tr ng-repeat ="r in requests">
+	<td>{{r.ID}}</td>
+	<td>{{r.quantity}}</td>
+	<td>{{r.weight}}</td>
+	<td><button type="button" class="btn btn-primary">Pogledaj ponude</button></td>
+</tr>
+
+
+
 </table>
