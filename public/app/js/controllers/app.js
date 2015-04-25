@@ -1,4 +1,4 @@
-var kornjacolovciApp = angular.module('kornjacolovciApp', ['ngRoute']);
+var kornjacolovciApp = angular.module('kornjacolovciApp', ['ngRoute','ngResource']);
 
 kornjacolovciApp.config(function($routeProvider){
     $routeProvider
@@ -9,7 +9,12 @@ kornjacolovciApp.config(function($routeProvider){
         .when('/m',{
             templateUrl: 'views/maric.html',
             controller: 'maricController'
-        }).otherwise('/');
+        })
+	.when('/d',{
+            templateUrl: 'views/deki.html',
+            controller: 'dekiController'
+        })
+	.otherwise('/');
 });
 
 kornjacolovciApp.controller('baseController', function($scope) {
