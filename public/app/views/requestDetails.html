@@ -1,0 +1,30 @@
+<div class="row" ng-controller="requestsController" data-ng-init="requestDetailsInit()">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Detalji zahteva
+        </div>
+
+        <div class="panel-body">
+            <strong>Vrsta zivotinje: </strong><span ng-bind="requestDetails[0].animal_name"></span>
+            <strong>Kolicina: </strong><span ng-bind="requestDetails[0].quantity"></span><br/>
+            <strong>Tezina: </strong><span ng-bind="requestDetails[0].weight"></span><br/>
+            <strong>Datum isporuke: </strong><span ng-bind="requestDetails[0].delivery_date | date:'dd.MM.yyyy.'"></span><br/>
+            <strong>Datum postavljanja: </strong><span ng-bind="requestDetails[0].creation_time | date:'dd.MM.yyyy.'"></span><br/>
+        </div>
+    </div>
+    <h3>Ponude:</h3>
+
+    <div class="col-lg-4" ng-repeat="offer in requestOffers">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <strong>Cena:</strong> <span ng-bind="offer.price"></span>
+                <a class="pull-right btn btn-primary btn-xs" href="">prihvati ponudu</a>
+            </div>
+            <div class="panel-body">
+                <strong>Opis:</strong> <span ng-bind="offer.details"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
