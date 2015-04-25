@@ -6,9 +6,9 @@ var APIService    = require(__dirname + '/../lib/APIService');
 
 api = new APIService();
 
-router.get('/:id?', api.requests);
-router.post('/', api.requestsAdd);
-router.put('/:id', api.requestsEdit);
-router.delete('/:id', api.requestsDelete);
+router.get('/:id?', api.animals);
+router.post('/', api.animalsAdd);
+router.put('/:id', api.animalsEdit);
+router.delete('/:id', api.animalsDelete);
 
 module.exports = router;
