@@ -4,11 +4,11 @@ kornjacolovciApp.factory('FactoryTest', ['$resource', function($resource){
 		addUser	    :   { url:"http://localhost:3000/users/addUser" , params: {username:"@username"}, method:"POST", isArray:false},
 		getAllRequestList : { url : '/requests/', params: {}, method: 'GET',  timeout : 5000, isArray:true},
 		getActiveRequestList : { url : '/requests/active', params: {}, method: 'GET',  timeout : 5000, isArray:true},
-		addMyRequest : {url: '/requests', params: {}, method: 'POST', timeout: 5000},
+		addMyRequest : {url: '/requests', method: 'POST'},
 		getRequestDetails : {url : '/requests/:request_id', params : {}, method: 'GET', timeout: 5000, isArray:true},
 		getRequestOffers : {url: '/requests/:request_id/offers', params : {}, method: 'GET', timeout: 5000, isArray: true},
-		getMyRequests : {url: '/requests/:id', params: {}, method: 'GET', timeout: 5000, isArray:true}
-
+		getMyRequests : {url: '/users/:id/requests/', params: {}, method: 'GET', timeout: 5000, isArray:true},
+		getAnimals: {url:'/animals/', params: {}, method: 'GET', isArray:true }
 
 	});
 }]);
