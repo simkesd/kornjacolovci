@@ -10,13 +10,9 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/maric.html',
             controller: 'maricController'
         })
-			  .when('/d',{
+	.when('/d',{
             templateUrl: 'views/deki.html',
             controller: 'dekiController'
-        })
-				.when('/user/:username',{
-            templateUrl: 'views/userView.html',
-            controller: 'userController'
         })
 	.otherwise('/');
 });
