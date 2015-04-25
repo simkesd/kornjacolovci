@@ -7,7 +7,6 @@ kornjacolovciApp.controller('dekiController', ['$scope', 'FactoryTest', function
 	});	
     }
 
-
     $scope.addUser = function(){
 
 	FactoryTest.addUser({username: $scope.username}, function(result){

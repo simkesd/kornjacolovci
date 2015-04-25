@@ -14,13 +14,21 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/deki.html',
             controller: 'dekiController'
         })
-				.when('/user/:username',{
+		.when('/user/:id',{
             templateUrl: 'views/userView.html',
+            controller: 'userController'
+        })
+        .when('/user/:id/requests/',{
+            templateUrl: 'views/userRequests.html',
             controller: 'userController'
         })
         .when('/requests/', {
             templateUrl: 'views/requests.html',
             controller: 'requestsController'
+        })
+        .when('/request/:requestId/newoffer', {
+            templateUrl: 'views/newOffer.html',
+            controller: 'offerController'
         })
 	.otherwise('/');
 });
