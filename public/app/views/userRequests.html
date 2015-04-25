@@ -5,13 +5,14 @@
 	<td>ID</td>
 	<td>Broj</td>
 	<td>Prosecna tezina</td>
-	<td></td>
+	<td>Tip zivotinje</td>
 </tr>
 <tr ng-repeat ="r in requests">
 	<td>{{r.ID}}</td>
 	<td>{{r.quantity}}</td>
 	<td>{{r.weight}}</td>
-	<td><button type="button" class="btn btn-primary">Pogledaj ponude</button></td>
+	<td>{{r.animal_name}}</td>
+	<a href="/request{{r.ID}}">pogledaj ponude</a>
 </tr>
 
 
