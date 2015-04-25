@@ -1,4 +1,4 @@
-var kornjacolovciApp = angular.module('kornjacolovciApp', ['ngRoute','ngResource']);
+var kornjacolovciApp = angular.module('kornjacolovciApp', ['ngRoute','ngResource', 'ngCookies']);
 
 kornjacolovciApp.config(function($routeProvider){
     $routeProvider
@@ -34,13 +34,35 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/requestDetails.html',
             controller: 'requestsController'
         })
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'baseController'
+        })
 	.otherwise('/');
 });
 
-kornjacolovciApp.controller('baseController', function($scope) {
+kornjacolovciApp.controller('baseController', ['$scope', '$cookieStore', '$routeParams', 'FactoryTest', function ($scope,$cookieStore, $routeParams, FactoryTest) {
+
+    $scope.checkUser = function() {
+        //$scope.loggedUser =  $cookieStore.get('loggedUser');
+    }
+
+    $scope.doLoginF = function() {
+        FactoryTest.doLogin({
+                username: $scope.username,
+                password: $scope.password
+            }, function (result) {
+                $cookieStore.put('loggedUser',result[0]);
+                $scope.loggedUser = result[0];
+            }, function (error) {
+                $cookieStore.remove('loggedUser');
+            }
+        )
+    }
 
     $scope.indexInit = function() {
         console.log("Kornjacolovci rulz! :)");
+        $scope.checkUser();
     }
 
-});
+}]);
