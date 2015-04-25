@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer  = require('multer');
+
 // Database
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -12,6 +14,26 @@ var offers = require('./routes/offers');
 var animals = require('./routes/animals');
 
 var app = express();
+
+var done=false;
+
+/*Configure the multer (for image uplaod).*/
+app.use(multer({ dest: './uploads/',
+    onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...')
+    },
+    onFileUploadComplete: function (file) {
+        console.log(file.fieldname + ' uploaded to  ' + file.path)
+        done=true;
+    }
+}));
+app.post('/api/photo',function(req,res){
+    if(done==true){
+        console.log(req.files);
+        res.end("File uploaded.");
+    }
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
