@@ -1,9 +1,12 @@
-kornjacolovciApp.controller('requestsController', ['$scope', 'FactoryTest', function($scope, FactoryTest) {
+kornjacolovciApp.controller('requestsController', ['$scope', '$routeParams', 'FactoryTest', function($scope, $routeParams, FactoryTest) {
 
-    $scope.requests = [];
 
-    $scope.requestInit = function (){
+    $scope.requestListInit = function (){
         $scope.getActiveRequestList();
+    }
+
+    $scope.requestDetailsInit = function() {
+        $scope.getRequestDetails();
     }
 
     $scope.getActiveRequestList = function(){
@@ -13,4 +16,12 @@ kornjacolovciApp.controller('requestsController', ['$scope', 'FactoryTest', func
             $scope.requests = [];
         });
     }
+
+    $scope.getRequestDetails = function() {
+        FactoryTest.getRequestDetails({request_id: $routeParams.requestId}, function(result){
+            $scope.requestDetails = result;
+        }, function(error) {
+            $scope.requestDetails = "";
+        }
+        )}
 }]);

@@ -30,6 +30,10 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/newOffer.html',
             controller: 'offerController'
         })
+        .when('/request/:requestId', {
+            templateUrl: 'views/requestDetails.html',
+            controller: 'requestsController'
+        })
 	.otherwise('/');
 });
 
