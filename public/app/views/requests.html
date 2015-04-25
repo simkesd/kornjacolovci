@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="row" ng-controller="requestsController" data-ng-init="requestInit()">
+    <div class="panel panel-info" ng-repeat="request in requests">
+        <div class="panel-heading">
+            <a href="" class="pull-right btn btn-primary btn-xs">Napravi ponudu</a>
+            {{request}}
+        </div>
+        <div class="panel-body">
+            text
+        </div>
+        <div class="panel-footer">
+            sss
+        </div>
+    </div>
+</div>
 
-</body>
-</html>

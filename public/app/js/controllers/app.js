@@ -18,6 +18,10 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/userView.html',
             controller: 'userController'
         })
+        .when('/requests/', {
+            templateUrl: 'views/requests.html',
+            controller: 'requestsController'
+        })
 	.otherwise('/');
 });
 
