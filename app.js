@@ -35,16 +35,16 @@ app.post('/api/photo',function(req,res){
     }
 });
 
-var http = require('http');
-var express = require('express'),
-    app = module.exports.app = express();
-//
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);  //pass a http.Server instance
-server.listen(8080);  //listen on port 80
-io.on('connection', function(socket){
-    console.log('a user connected');
-});
+//var http = require('http');
+//var express = require('express'),
+//    app = module.exports.app = express();
+////
+//var server = http.createServer(app);
+//var io = require('socket.io').listen(server);  //pass a http.Server instance
+//server.listen(8080);  //listen on port 80
+//io.on('connection', function(socket){
+//    console.log('a user connected');
+//});
 //
 //
 //// view engine setup
