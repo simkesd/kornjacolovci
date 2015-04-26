@@ -1,0 +1,48 @@
+<div class="row" data-ng-init="newSellOfferInit()">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            heading
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Zivotinja</label>
+                <select class="form-control" id="animal">
+                    <option ng-repeat="a in animals" value="{{a.ID}}">
+                        {{a.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Kilaza</label>
+                <input type="text" ng-model="weight" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label>kolicina</label>
+                <input type="text" ng-model="quantity" class="form-control"/>
+            </div>
+
+            <div>
+                <label>mesto</label>
+                <input type="text" class="form-control" ng-model="plaace"/>
+            </div>
+
+            <div>
+                <label>transport</label>
+                <select class="form-control" id="transport">
+                    <option value="1">Da</option>
+                    <option value="0">Ne</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>opis</label>
+                <textarea class="form-control" ng-model="description"></textarea>
+            </div>
+            <br/>
+            <input type="button" ng-click="submitSellOffer()" value="sacuvaj" class="btn btn-primary"/>
+        </div>
+    </div>
+</div>

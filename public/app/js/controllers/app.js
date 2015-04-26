@@ -38,6 +38,10 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/login.html',
             controller: 'baseController'
         })
+        .when('/newSellOffer', {
+            templateUrl: 'views/newSellOffer.html',
+            controller: 'sellOfferController'
+        })
 	.otherwise('/');
 });
 
