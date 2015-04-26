@@ -11,7 +11,8 @@ kornjacolovciApp.factory('FactoryTest', ['$resource', function($resource){
 		doLogin : {url: '/users/login', params: {}, method: 'POST', timeout: 5000, isArray:true},
 		getAnimals: {url:'/animals/', params: {}, method: 'GET', isArray:true },
 		postNewOffer: {url:'/offers/', params:{}, method: 'POST', timeout: 5000},
-		acceptOffer : {url:'/requests/:request_id', params : {}, method : 'PUT'}
+		acceptOffer : {url:'/requests/:request_id', params : {}, method : 'PUT'},
+		postNewSellOffer : {url: '/sell_offers', params : {}, method : 'POST'}
 	});
 }]);
 
