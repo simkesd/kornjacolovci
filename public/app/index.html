@@ -47,41 +47,26 @@
     <div ng-if="loggedUser != null">
         <div id="wrapper">
             <br/>
+            <div class="container-fluid">
+            <div class="row" style="height:50px"></div>
 
-            <div id="content" ng-view>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    
+                    <div id="content" ng-view>
+                       
+                    </div>
+
+                </div>
+                <div class="col-md-1"></div>
             </div>
-            <!-- /#page-wrapper -->
+            
+            </div>
         </div>
     </div>
     <!-- /#wrapper -->
-    <div ng-if="loggedUser == null">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="login-panel panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Molimo vas da se ulogujete</h3>
-                        </div>
-                        <div class="panel-body">
-                            <form role="form">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" ng-model="$parent.username"
-                                               placeholder="Korisnicko ime" autofocus=""/>
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="password" ng-model="$parent. password"
-                                               placeholder="Sifra"/>
-                                    </div>
-                                    <a ng-click="doLoginF()" class="btn btn-lg btn-success btn-block">Uloguj se</a>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 
 

@@ -1,7 +1,4 @@
-.rotateABit {
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
-    -ms-transform: rotate(2deg);
-    transform: rotate(2deg);
+div#content{
+	border:1px solid black;
+	padding:20px 40px 20px 40px;
 }

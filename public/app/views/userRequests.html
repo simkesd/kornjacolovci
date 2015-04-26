@@ -11,7 +11,7 @@
 
 <tr ng-repeat ="r in requests">	
 	<td><h2>
-	<a href="/app/#/request/{{r.ID}}">pogledaj ponude</a> za &nbsp;&nbsp;&nbsp; 
+	<a href="/app/#/request/{{r.ID}}" data-transition="slide" data-direction="reverse">pogledaj ponude</a> za &nbsp;&nbsp;&nbsp; 
 	{{r.quantity}} x <img ng-src="images/{{r.animal_name}}.png" width="128" height="128"> po {{r.weight}}
 	</h2></td>
 
