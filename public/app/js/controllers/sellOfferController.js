@@ -7,6 +7,10 @@ kornjacolovciApp.controller('sellOfferController', ['$scope', '$cookieStore',  '
         $scope.getAnimals();
     }
 
+    $scope.sellOfferListInit = function() {
+        $scope.getSellOffers();
+    }
+
     $scope.getRequestDetails = function () {
         FactoryTest.getRequestDetails({request_id: $routeParams.requestId}, function (result) {
                 $scope.requestDetails = result;
@@ -36,6 +40,12 @@ kornjacolovciApp.controller('sellOfferController', ['$scope', '$cookieStore',  '
     $scope.getAnimals = function(){
         FactoryTest.getAnimals({}, function(data){
             $scope.animals = data;
+        });
+    }
+
+    $scope.getSellOffers = function () {
+        FactoryTest.getSellOffersList({}, function(data){
+            $scope.sellOffersList = data;
         });
     }
 }]);
