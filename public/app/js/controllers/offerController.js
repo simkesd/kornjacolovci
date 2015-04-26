@@ -1,4 +1,4 @@
-kornjacolovciApp.controller('offerController', ['$scope', '$cookieStore',  '$routeParams', 'FactoryTest', function($scope, $cookieStore, $routeParams, FactoryTest) {
+kornjacolovciApp.controller('offerController', ['$scope', '$cookieStore',  '$routeParams', 'FactoryTest', '$location', function($scope, $cookieStore, $routeParams, FactoryTest, $location) {
 
     $scope.requestId = $routeParams.requestId;
     $scope.loggedUser =  $cookieStore.get('loggedUser');
@@ -25,6 +25,8 @@ kornjacolovciApp.controller('offerController', ['$scope', '$cookieStore',  '$rou
                 details: $scope.offerDetails
             }, function(){
                 alert("Zahtev uspesno poslat.");
+                $location.path("/requests/");
+
             },function() {
                 alert('greska');
             });

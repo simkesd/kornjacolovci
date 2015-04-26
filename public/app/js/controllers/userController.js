@@ -4,12 +4,12 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
      $scope.animals = [];
      $scope.quantity = 100;
      $scope.weight = 100;
-     $scope.selectedAnimalID = 3;
-     $scope.selectedAnimalName = "Macka";
+     $scope.selectedAnimalID = 1;
+     $scope.selectedAnimalName = "";
 
 
      $scope.goToMyRequests = function(){
-     	$location.path('/user/' + $routeParams.id + '/requests');
+     	$location.path('/user/' + $routeParams.id + '/requests');  
      }
 
      $scope.chooseAnimal = function(animalID){
@@ -33,7 +33,7 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
 		}, function(){
                
 			alert("Zahtev uspesno poslat.");
-               goToMyRequests();
+               $scope.goToMyRequests();
 		});
 
      }
@@ -47,7 +47,11 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
      var getAnimals = function(){
      	FactoryTest.getAnimals({}, function(data){
      		$scope.animals = data;
+               $scope.selectedAnimalID = 0;
+               $scope.selectedAnimalName = $scope.animals[0].name;
+
      	});
+          
      }
 
      var getAnimalName = function(ID){
