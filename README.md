@@ -1,5 +1,7 @@
 # kornjacolovci
 
+### ATTENTION - this is hackathon code, and it's highly unusable ( : Works only in for presentation purposes
+
 ### Instructions
 
 Install
