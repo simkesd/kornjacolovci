@@ -24,7 +24,7 @@ kornjacolovciApp.controller('sellOfferController', ['$scope', '$cookieStore',  '
                 quantity : $scope.quantity,
                 place : $scope.place,
                 transport : $("#transport").val(),
-                postNewSellOffer : $scope.description,
+                description : $scope.description,
                 user_id : $scope.loggedUser.ID
             }, function(){
                 alert("Zahtev uspesno poslat.");
