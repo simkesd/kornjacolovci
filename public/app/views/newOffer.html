@@ -1,1 +1,38 @@
-request id : {{requestId}}
+<div class="row" data-ng-init="offerInit()">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Detalji zahteva
+        </div>
+
+        <div class="panel-body">
+            <strong>Vrsta zivotinje: </strong><span ng-bind="requestDetails[0].animal_name"></span>
+            <strong>Kolicina: </strong><span ng-bind="requestDetails[0].quantity"></span><br/>
+            <strong>Tezina: </strong><span ng-bind="requestDetails[0].weight"></span><br/>
+            <strong>Datum isporuke: </strong><span
+                ng-bind="requestDetails[0].delivery_date | date:'dd.MM.yyyy.'"></span><br/>
+            <strong>Datum postavljanja: </strong><span
+                ng-bind="requestDetails[0].creation_time | date:'dd.MM.yyyy.'"></span><br/>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Nova ponuda
+        </div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Cena</label>
+                <input ng-model="offerPrice" type="text" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Detalji ponude</label>
+                <textarea ng-model="offerDetails" class="form-control"></textarea>
+            </div>
+            <input type="button" ng-click="submitOffer()" value="sacuvaj ponudu"/>
+        </div>
+
+    </div>
+</div>

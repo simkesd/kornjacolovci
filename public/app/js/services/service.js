@@ -9,8 +9,8 @@ kornjacolovciApp.factory('FactoryTest', ['$resource', function($resource){
 		getRequestOffers : {url: '/requests/:request_id/offers', params : {}, method: 'GET', timeout: 5000, isArray: true},
 		getMyRequests : {url: '/users/:id/requests/', params: {}, method: 'GET', timeout: 5000, isArray:true},
 		doLogin : {url: '/users/login', params: {}, method: 'POST', timeout: 5000, isArray:true},
-		getAnimals: {url:'/animals/', params: {}, method: 'GET', isArray:true }
-
+		getAnimals: {url:'/animals/', params: {}, method: 'GET', isArray:true },
+		postNewOffer: {url:'/offers/', params:{}, method: 'POST', timeout: 5000}
 	});
 }]);
 
