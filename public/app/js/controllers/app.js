@@ -65,4 +65,10 @@ kornjacolovciApp.controller('baseController', ['$scope', '$cookieStore', '$route
         $scope.checkUser();
     }
 
+    $scope.logout = function() {
+        console.log('Loggint out user.');
+        $cookieStore.remove('loggedUser');
+        location.reload();
+    }
+
 }]);
