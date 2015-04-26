@@ -20,7 +20,6 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
 
      $scope.addMyRequest = function(){
 
-
 		FactoryTest.addMyRequest(
 		{
 			animal_ID: $scope.selectedAnimalID,
@@ -32,7 +31,9 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
 			creation_time: null
 
 		}, function(){
+               
 			alert("Zahtev uspesno poslat.");
+               goToMyRequests();
 		});
 
      }
