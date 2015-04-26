@@ -5,3 +5,11 @@
     -ms-transform: rotate(2deg);
     transform: rotate(2deg);
 }
+
+.leftArrow {
+	background-image: url('../images/left.png');
+}
+
+.leftArrow: hover{
+	background-image: url('../images/left_hover.png');
+}

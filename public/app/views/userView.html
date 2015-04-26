@@ -1,21 +1,55 @@
 	
 
-	<h1>Sta ti treba, matori?</h1>
-	<select class="form-control">
-        <option ng-repeat="a in animals" value="{{a.ID}}">
-        	{{a.name}}
-        </option>
-    </select>
+	<h1 align="center">Šta ti treba?<i></h1>
+	<hr>
 
-    
-	<input class="form-control" placeholder="Unesite broj grla" ng-model="quantity">
-    <input class="form-control" placeholder="Unesite prosecnu masu grla" ng-model="weight">
-	<input class="form-control" placeholder="Unesite datum" ng-model="deliveryDate">
-	<br>
 
-	<button type="button" class="btn btn-primary" ng-click="addMyRequest()">Predstavi zahtev</button>
-	<button type="button" class="btn btn-primary" ng-click="goToMyRequests()">Pogledaj sve svoje zahteve</button>
+	<div class="row">
+	<div class="col-md-4"></div>
+	<div ng-repeat="a in animals" class="col-md-1">
+		<img ng-src="images/{{a.name}}.png" width="100px" height="100px" ng-click="chooseAnimal(a.ID)">
 
+	</div>
+
+	<div class="col-md-4"></div>
+	</div>
+	<h2 align="center">Izabrana: <b>{{selectedAnimalName}}</b></h2>	
+    <div class="row" style="text-align:center">
+	    <h2> koliko? 
+	    	<img ng-src='images/left.png' width='40' height='50' onmouseover="this.src='images/left_hover.png';" onmouseout="this.src='images/left.png';" ng-click="decreaseQuantity(5)"/>
+	    	<img ng-src='images/left.png' width='40' height='30' onmouseover="this.src='images/left_hover.png';" onmouseout="this.src='images/left.png';" ng-click="decreaseQuantity(1)"/>
+	    	{{quantity}}	
+	    	<img ng-src='images/right.png' width='40' height='30' onmouseover="this.src='images/right_hover.png';" onmouseout="this.src='images/right.png';" ng-click="increaseQuantity(1)"/>
+	    	<img ng-src='images/right.png' width='40' height='50' onmouseover="this.src='images/right_hover.png';" onmouseout="this.src='images/right.png';" ng-click="increaseQuantity(5)"/>
+	    </h2>
+    </div>
+
+    <div class="row" style="text-align:center">
+	    <h2> mase  
+	    	<img ng-src='images/left.png' width='40' height='50' onmouseover="this.src='images/left_hover.png';" onmouseout="this.src='images/left.png';" ng-click="decreaseWeight(10)"/>
+	    	<img ng-src='images/left.png' width='40' height='30' onmouseover="this.src='images/left_hover.png';" onmouseout="this.src='images/left.png';" ng-click="decreaseWeight(1)"/>
+	    	{{weight}}	
+	    	<img ng-src='images/right.png' width='40' height='30' onmouseover="this.src='images/right_hover.png';" onmouseout="this.src='images/right.png';" ng-click="increaseWeight(1)"/>
+	    	<img ng-src='images/right.png' width='40' height='50' onmouseover="this.src='images/right_hover.png';" onmouseout="this.src='images/right.png';" ng-click="increaseWeight(10)"/>
+	    	kg
+	    </h2>
+    </div>
+    <hr>
+
+	<div class="row" style="text-align:center">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<h2><input class="form-control input-sm" placeholder="Unesite datum isporuke" ng-model="deliveryDate"></h2>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<hr>
+	<div class="row" style="text-align:center;">
+		<button type="button" class="btn btn-primary" ng-click="addMyRequest()">Predstavi zahtev</button>&nbsp;&nbsp;ili&nbsp;&nbsp; 
+		<button type="button" class="btn btn-primary" ng-click="goToMyRequests()">Pogledaj sve svoje zahteve</button>
+		
+	</div>
+	
 
 </div>
 </p>
