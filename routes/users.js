@@ -9,6 +9,7 @@ api = new APIService();
 
 router.post('/login', api.userLogin);
 router.get('/:id/offers', api.userOffers);
+router.get('/:id/requests/active', api.userActiveRequests);
 router.get('/:id/requests', api.userRequests);
 router.get('/:id?', api.users);
 router.post('/', api.usersAdd);
