@@ -39,8 +39,6 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
      	});
      }
 
-
-
      getMyRequests();
      getAnimals();
  
