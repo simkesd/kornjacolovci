@@ -18,7 +18,7 @@
         <div class="panel panel-success">
             <div class="panel-heading">
                 <strong>Cena:</strong> <span ng-bind="offer.price"></span>
-                <a class="pull-right btn btn-primary btn-xs" href="">prihvati ponudu</a>
+                <button class="pull-right btn btn-primary btn-xs" ng-click="acceptOffer(offer.ID)">prihvati ponudu</button>
             </div>
             <div class="panel-body">
                 <strong>Opis:</strong> <span ng-bind="offer.details"></span>
