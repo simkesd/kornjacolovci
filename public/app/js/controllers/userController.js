@@ -2,18 +2,28 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
     
      $scope.id = $routeParams.id;
      $scope.animals = [];
+     $scope.quantity = 100;
+     $scope.weight = 100;
+     $scope.selectedAnimalID = 3;
+     $scope.selectedAnimalName = "Macka";
+
 
      $scope.goToMyRequests = function(){
      	$location.path('/user/' + $routeParams.id + '/requests');
      }
 
+     $scope.chooseAnimal = function(animalID){
+          $scope.selectedAnimalID = animalID;
+          $scope.selectedAnimalName = getAnimalName(animalID);
+          
+     }
+
      $scope.addMyRequest = function(){
 
-     	var selectedAnimalID =  document.querySelector("select").value;
 
 		FactoryTest.addMyRequest(
 		{
-			animal_ID: selectedAnimalID,
+			animal_ID: $scope.selectedAnimalID,
 			quantity: $scope.quantity,
 			weight: $scope.weight,
 			delivery_date: $scope.deliveryDate,
@@ -39,7 +49,33 @@ kornjacolovciApp.controller('userController', ['$scope', '$routeParams', 'Factor
      	});
      }
 
+     var getAnimalName = function(ID){
+          for (var i = 0; i < $scope.animals.length; i++){
+               if ($scope.animals[i].ID == ID )
+                    return $scope.animals[i].name;
+          }
+     }
+
+     $scope.increaseQuantity = function(x){
+          $scope.quantity+=x;
+          if ($scope.quantity > 1000) $scope.quantity = 1000;
+     }
+     $scope.decreaseQuantity = function(x){
+          $scope.quantity-=x;
+          if ($scope.quantity < 0) $scope.quantity = 0;
+     }
+
+     $scope.increaseWeight = function(x){
+          $scope.weight+=x;
+          if ($scope.weight > 1000 ) $scope.weight = 1000;
+     }
+     $scope.decreaseWeight = function(x){
+          $scope.weight-=x;
+          if ($scope.weight < 0) $scope.weight = 0;
+     }
+
      getMyRequests();
      getAnimals();
+
  
 }]);
