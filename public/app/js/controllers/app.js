@@ -10,7 +10,7 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/maric.html',
             controller: 'maricController'
         })
-			  .when('/d',{
+	   .when('/d',{
             templateUrl: 'views/deki.html',
             controller: 'dekiController'
         })
@@ -46,7 +46,13 @@ kornjacolovciApp.config(function($routeProvider){
             templateUrl: 'views/sellOffersList.html',
             controller: 'sellOfferController'
         })
-	.otherwise('/');
+        .when('/welcome', {
+            templateUrl: 'views/welcome.html',
+            controller: 'welcomeController'
+        })
+	.otherwise({
+        redirectTo: '/welcome'
+    });
 });
 
 kornjacolovciApp.controller('baseController', ['$scope', '$cookieStore', '$routeParams', 'FactoryTest', function ($scope,$cookieStore, $routeParams, FactoryTest) {

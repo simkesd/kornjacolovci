@@ -13,3 +13,8 @@
 .leftArrow: hover{
 	background-image: url('../images/left_hover.png');
 }
+
+.card {
+	border: 1px solid #DDDDDD;
+	padding : 10px;
+}
