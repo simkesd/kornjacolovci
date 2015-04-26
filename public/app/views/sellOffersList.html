@@ -4,7 +4,7 @@
             {{sellOffer.animal_name}} - (Broj grla: {{ sellOffer.quantity}})
         </div>
         <div class="panel-body">
-            <strong>Mesto"</strong>
+            <strong>Mesto: </strong>
 
             <span class="ng-binding" ng-bind="sellOffer.place"></span>
 
@@ -23,6 +23,14 @@
             <span ng-if="sellOffer.transport == 0">
                 ne
             </span>
+
+            <br>
+
+            <strong>Vlasnik oglasa: </strong>
+
+            <span class="ng-binding" ng-bind="sellOffer.username"></span>
+
+            <br>
             <!--<span class="ng-binding" ng-bind="sellOffer.transport"></span>-->
         </div>
     </div>
