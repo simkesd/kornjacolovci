@@ -1,0 +1,29 @@
+<div class="row" data-ng-init="sellOfferListInit()">
+    <div class="panel panel-info" ng-repeat="sellOffer in sellOffersList">
+        <div class="panel-heading">
+            {{sellOffer.animal_name}} - (Broj grla: {{ sellOffer.quantity}})
+        </div>
+        <div class="panel-body">
+            <strong>Mesto"</strong>
+
+            <span class="ng-binding" ng-bind="sellOffer.place"></span>
+
+            <br>
+
+            <strong>Opis: </strong>
+
+            <span class="ng-binding" ng-bind="sellOffer.description"></span>
+
+            <br>
+
+            <strong>Obezbedjen transport: </strong>
+            <span ng-if="sellOffer.transport == 1">
+                da
+            </span>
+            <span ng-if="sellOffer.transport == 0">
+                ne
+            </span>
+            <!--<span class="ng-binding" ng-bind="sellOffer.transport"></span>-->
+        </div>
+    </div>
+</div>
